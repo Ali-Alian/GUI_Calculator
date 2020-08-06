@@ -1,3 +1,9 @@
+"""
+Developed by Ali Alian
+email: alimansuralian@gmail.com
+
+"""
+
 from tkinter import *
 
 

@@ -1,3 +1,9 @@
+"""
+Developed by Ali Alian
+email: alimansuralian@gmail.com
+
+"""
+
 import PySimpleGUI as sg
 
 sg.theme('DarkAmber')
@@ -17,15 +23,15 @@ form = sg.FlexForm('pysimplecalc', default_button_element_size=(5, 2), auto_size
 form.Layout(layout) 
 
 
-var = " "
+result = " "
 
 while True:
     event, values = form.read()
     
     try:
         if event is '=':
-            var = values['input']
-            sum = eval(var)
+            result = values['input']
+            sum = eval(result)
             form.FindElement('input').Update(sum)
     except ZeroDivisionError:
         form.FindElement('input').Update('Error')
@@ -37,7 +43,7 @@ while True:
         form.FindElement('input').Update('')
         
     if event in '*/-+1234567890':
-        var = values['input'] # get what's been entered so far  
-        var += event # add the new digit  
+        result = values['input'] # get what's been entered so far  
+        result += event # add the new digit  
     # output the final string  
-        form.FindElement('input').Update(var) # change the form to reflect current key string  
+        form.FindElement('input').Update(result) # change the form to reflect current key string  
